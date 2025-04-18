@@ -74,10 +74,10 @@ public class Employee {
 	public void setAdditionalIncome(int income) {	
 		this.otherMonthlyIncome = income;
 	}
-	
+	//FeatureEnvy
 	public void setSpouse(String spouseName, String spouseIdNumber) {
 		this.spouseName = spouseName;
-		this.spouseIdNumber = idNumber;
+		this.spouseIdNumber = spouseIdNumber; 
 	}
 	
 	public void addChild(String childName, String childIdNumber) {
@@ -90,8 +90,8 @@ public class Employee {
 		//Menghitung berapa lama pegawai bekerja dalam setahun ini, jika pegawai sudah bekerja dari tahun sebelumnya maka otomatis dianggap 12 bulan.
 		LocalDate date = LocalDate.now();
 		
-		if (date.getYear() == yearJoined) {
-			monthWorkingInYear = date.getMonthValue() - monthJoined;
+		if (date.getYear() == joinedDate.getYear()) {
+			monthWorkingInYear = date.getMonthValue() - joinedDate.getMonthValue();
 		}else {
 			monthWorkingInYear = 12;
 		}

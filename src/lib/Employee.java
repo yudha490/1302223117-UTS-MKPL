@@ -56,6 +56,16 @@ public class Employee {
         int baseSalary = getBaseSalaryByGrade(grade);
         monthlySalary = isForeigner ? (int)(baseSalary * 1.5) : baseSalary;
     }
+
+	//Long Method
+	private int getBaseSalaryByGrade(int grade) {
+        switch(grade) {
+            case 1: return 3000000;
+            case 2: return 5000000;
+            case 3: return 7000000;
+            default: throw new IllegalArgumentException("Invalid grade");
+        }
+    }
 	
 	public void setAnnualDeductible(int deductible) {	
 		this.annualDeductible = deductible;

@@ -77,7 +77,7 @@ public class Employee {
 	//FeatureEnvy
 	public void setSpouse(String spouseName, String spouseIdNumber) {
 		this.spouseName = spouseName;
-		this.spouseIdNumber = spouseIdNumber; 
+		this.spouseIdNumber = spouseIdNumber;
 	}
 	
 	public void addChild(String childName, String childIdNumber) {

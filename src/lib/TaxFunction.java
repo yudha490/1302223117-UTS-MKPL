@@ -2,7 +2,12 @@ package lib;
 
 public class TaxFunction {
 
-	
+	private static final int BulanSetahun = 12;
+    private static final double TaxRate = 0.05;
+    private static final int singleTax = 54000000;
+    private static final int BonusNikah = 4500000;
+    private static final int DeductionPerAnak = 1500000;
+    private static final int MaxAnakDeduction = 3;
 	/**
 	 * Fungsi untuk menghitung jumlah pajak penghasilan pegawai yang harus dibayarkan setahun.
 	 * 
@@ -19,18 +24,18 @@ public class TaxFunction {
 		
 		int tax = 0;
 		
-		if (numberOfMonthWorking > 12) {
+		if (numberOfMonthWorking > BulanSetahun) {
 			System.err.println("More than 12 month working per year");
 		}
 		
-		if (numberOfChildren > 3) {
-			numberOfChildren = 3;
+		if (numberOfChildren > MaxAnakDeduction) {
+			numberOfChildren = MaxAnakDeduction;
 		}
 		
 		if (isMarried) {
-			tax = (int) Math.round(0.05 * (((monthlySalary + otherMonthlyIncome) * numberOfMonthWorking) - deductible - (54000000 + 4500000 + (numberOfChildren * 1500000))));
+			tax = (int) Math.round(TaxRate * (((monthlySalary + otherMonthlyIncome) * numberOfMonthWorking) - deductible - (singleTax + BonusNikah + (numberOfChildren * DeductionPerAnak))));
 		}else {
-			tax = (int) Math.round(0.05 * (((monthlySalary + otherMonthlyIncome) * numberOfMonthWorking) - deductible - 54000000));
+			tax = (int) Math.round(TaxRate * (((monthlySalary + otherMonthlyIncome) * numberOfMonthWorking) - deductible - singleTax));
 		}
 		
 		if (tax < 0) {

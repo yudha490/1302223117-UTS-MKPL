@@ -33,7 +33,7 @@ public class Employee {
 	
 	public Employee(String employeeId, String firstName, String lastName, String idNumber, 
                String address, int yearJoined, int monthJoined, int dayJoined, 
-               boolean isForeigner, boolean gender) {
+               boolean isForeigner, Gender gender) {
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
